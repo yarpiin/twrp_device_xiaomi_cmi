@@ -2,6 +2,10 @@
     Input:
         manifest_ds.xml
         manifest.xml
+        fod.xml
+        manifest.xml
+        manifest.xml
+        manifest.xml
         manifest.xml
         manifest.xml
         manifest.xml
@@ -359,6 +363,26 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.2::ISupplicant/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>com.fingerprints.extension</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IFingerprintEngineering</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintOptical</name>
+            <instance>default</instance>
+        </interface>
+        <interface>
+            <name>IFingerprintSensorTest</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.0::IFingerprintEngineering/default</fqname>
+        <fqname>@2.0::IFingerprintOptical/default</fqname>
+        <fqname>@2.0::IFingerprintSensorTest/default</fqname>
     </hal>
     <hal format="hidl">
         <name>com.qualcomm.qti.ant</name>
@@ -973,6 +997,16 @@
         <fqname>@1.0::IFidoService/default</fqname>
     </hal>
     <hal format="hidl">
+        <name>vendor.xiaomi.hardware.mioob</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IMiOob</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IMiOob/default</fqname>
+    </hal>
+    <hal format="hidl">
         <name>vendor.xiaomi.hardware.misys</name>
         <transport>hwbinder</transport>
         <version>1.0</version>
@@ -1013,16 +1047,6 @@
         <fqname>@1.1::IMlipayService/default</fqname>
     </hal>
     <hal format="hidl">
-        <name>vendor.xiaomi.hardware.motor</name>
-        <transport>hwbinder</transport>
-        <version>1.0</version>
-        <interface>
-            <name>IMotor</name>
-            <instance>default</instance>
-        </interface>
-        <fqname>@1.0::IMotor/default</fqname>
-    </hal>
-    <hal format="hidl">
         <name>vendor.xiaomi.hardware.mtdservice</name>
         <transport>hwbinder</transport>
         <version>1.2</version>
@@ -1031,6 +1055,26 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.2::IMTService/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.xiaomi.hardware.otrpagent</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IOTrPAgent</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IOTrPAgent/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.xiaomi.hardware.otrpagent</name>
+        <transport>hwbinder</transport>
+        <version>2.0</version>
+        <interface>
+            <name>IOTrPAgent</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@2.0::IOTrPAgent/default</fqname>
     </hal>
     <hal format="hidl">
         <name>vendor.xiaomi.hardware.tidaservice</name>
@@ -1071,6 +1115,16 @@
             <instance>default</instance>
         </interface>
         <fqname>@1.0::IVSIMService/default</fqname>
+    </hal>
+    <hal format="hidl">
+        <name>vendor.xiaomi.hardware.wireless</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IWirelessSwitch</name>
+            <instance>default</instance>
+        </interface>
+        <fqname>@1.0::IWirelessSwitch/default</fqname>
     </hal>
     <sepolicy>
         <version>29.0</version>

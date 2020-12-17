@@ -15,6 +15,8 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/omni_lmi.mk
+    $(LOCAL_DIR)/omni_umi.mk
 
-COMMON_LUNCH_CHOICES := omni_lmi-eng
+COMMON_LUNCH_CHOICES := omni_umi-eng
+
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
