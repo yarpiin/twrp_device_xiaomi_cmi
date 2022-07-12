@@ -6,8 +6,10 @@
 
 LOCAL_PATH := device/xiaomi/umi
 
-# Define hardware platform
-PRODUCT_PLATFORM := sm8250
+# Crypto
+PRODUCT_PACKAGES += \
+    qcom_decrypt \
+    qcom_decrypt_fbe
 
 # Fastbootd
 PRODUCT_PACKAGES += \
