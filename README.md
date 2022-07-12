@@ -3,7 +3,7 @@ For building TWRP for Xiaomi Mi 10
 
 TWRP device tree for Xiaomi Mi 10
 
-All blobs are extracted from ()miui_UMI_V12.5.10.0.RJBCNXM) firmware.
+All blobs are extracted from ()miui_UMI_V13.0.4.0.SJBCNXM) firmware.
 
 The Xiaomi Mi 10 (codenamed _"umi"_) is high-end smartphone from Xiaomi.
 
@@ -32,7 +32,8 @@ Xiaomi Mi 10 / 10 Pro was announced and released in February 2020.
 Works:
 
 - [X] ADB
-- [X] Decryption of /data (Android 11 only!!))
+- [X] Decryption of /data (MIUI - password/pattern only!!!)
+- [X] Decryption of /data (AOSP - Roms with wrapped key support only!!!)
 - [X] Screen brightness settings
 - [X] Vibration support
 - [X] MTP
@@ -48,14 +49,14 @@ Works:
 First checkout minimal twrp with aosp tree:
 
 ```
-repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-11
+repo init -u https://github.com/minimal-manifest-twrp/platform_manifest_twrp_aosp.git -b twrp-12.1
 repo sync
 ```
 
 Then add these projects to .repo/manifest.xml:
 
 ```xml
-<project path="device/xiaomi/umi" name="yarpiin/twrp_device_xiaomi_umi" remote="github" revision="android-11.0" />
+<project path="device/xiaomi/umi" name="yarpiin/twrp_device_xiaomi_umi" remote="github" revision="android-12.1" />
 ```
 
 Finally execute these:
@@ -64,14 +65,20 @@ Finally execute these:
 . build/envsetup.sh
 lunch twrp_umi-eng
 mka recoveryimage ALLOW_MISSING_DEPENDENCIES=true # Only if you use minimal twrp tree.
-```
 
-To test it:
+```
+## Special Notes for this branch
+- Device makefile in the device tree and dependencies file should use the "twrp" prefix.
+- Currently, decryption on 12.1 is a work in progress (WIP). Decryption is only fully functional (i.e. works with password/PIN/pattern) on legacy Pixel devices that use weaver but do not use wrappedkey. On other devices, decryption will only work if no PIN is set in Android.
+- FDE decryption is not presently supported in this branch.
+- In order to successfully build in this branch, the following patch(es) will need to be cherry-picked:
+
+    - [fscrypt: wip](https://gerrit.twrp.me/c/android_bootable_recovery/+/5405)
+    - [fscrypt: move functionality to libvold](https://gerrit.twrp.me/c/android_system_vold/+/5540)
+
+## To test it:
 
 ```
 fastboot boot out/target/product/umi/recovery.img
 ```
 
-## Other Sources
-
-Tree use pre-compiled kernel - https://github.com/yarpiin/White-Wolf-UMI-UNI
