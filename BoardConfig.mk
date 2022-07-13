@@ -174,10 +174,11 @@ TW_SUPPORT_INPUT_1_2_HAPTICS := true
 TW_Y_OFFSET := 90
 TW_H_OFFSET := -90
 TW_DEVICE_VERSION := White Wolf A12
+TW_EXCLUDE_APEX := true
 
 TW_INCLUDE_REPACKTOOLS := true
 TW_INCLUDE_RESETPROP := true
-TW_INCLUDE_LIBRESETPROP :=true
+TW_INCLUDE_LIBRESETPROP := true
 
 # The path to a temperature sensor
 TW_CUSTOM_CPU_TEMP_PATH := "/sys/devices/virtual/thermal/thermal_zone19/temp"
