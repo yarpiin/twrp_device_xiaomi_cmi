@@ -1,0 +1,16 @@
+import /init.recovery.qcom_decrypt.rc
+
+on fs
+    wait /dev/block/platform/soc/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+
+on init
+service vibrator-service /vendor/bin/vendor.qti.hardware.vibrator@1.2-service
+    class hal
+    user system
+    group system input
+    seclabel u:r:recovery:s0
+
+on boot
+    start vibrator-service
+
