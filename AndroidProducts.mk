@@ -15,6 +15,6 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/twrp_umi.mk
+    $(LOCAL_DIR)/twrp_cmi.mk
 
-COMMON_LUNCH_CHOICES := twrp_umi-eng
+COMMON_LUNCH_CHOICES := twrp_cmi-eng

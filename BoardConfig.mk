@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-DEVICE_PATH := device/xiaomi/umi
+DEVICE_PATH := device/xiaomi/cmi
 
 # Assert
-TARGET_OTA_ASSERT_DEVICE := umi
+TARGET_OTA_ASSERT_DEVICE := cmi
 
 # AVB
 BOARD_AVB_ENABLE := true

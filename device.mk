@@ -14,10 +14,10 @@
 # limitations under the License.
 #
 
-PRODUCT_RELEASE_NAME := umi
+PRODUCT_RELEASE_NAME := cmi
 PRODUCT_SHIPPING_API_LEVEL := 29
 PRODUCT_USE_DYNAMIC_PARTITIONS := true
-DEVICE_PATH := device/xiaomi/umi
+DEVICE_PATH := device/xiaomi/cmi
 
 # Crypto
 PRODUCT_PACKAGES += \
